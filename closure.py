@@ -7,43 +7,40 @@
 # variables of the outer function — and it keeps that access even if the outer
 # function is no longer active.
 
+def outer_function(x):
+    def inner_function(y):
+        return x + y
+    return inner_function
 
-# def outer_function(x):
-
-#     def inner_function(y):
-#         return x + y
-    
-#     return inner_function
 
 
 # closure = outer_function(10)  # returns inner_function, with x=10 "remembered"
 # print(closure(5))  # 15
 # print(closure(20)) # 30
 
-# outer_function returns inner_function.
 
-# inner_function keeps access to x, even though outer_function has finished
-# running.
-
-# That combination of the function (inner_function) + its remembered environment
-# (x=10) is the closure.
+# The outer_function returns inner_function. The inner_function keeps access to
+# x, even though the outer_function has finished executing.  The combination of
+# the function (inner_function) + its remembered environment (x=10) is the
+# closure.
 
 
-
-def counter(start) -> tuple:
+def counter(start=0):
     count = start
-    def increase_count(increase)-> int:
-        return count + increase
-    
-    def decrease_count(decrease)-> int:
-        return count +- decrease
 
+    def increase_count(val):
+        nonlocal count
+        count += val
+        return count
+    
+    def decrease_count(val):
+        nonlocal count
+        count -= val
+        return count
+    
     return increase_count, decrease_count
 
 count_up, count_down = counter(1)
-
 print(count_up(2))
 print(count_up(4))
-print(count_up(5))
-print(count_up(8))
-print(count_down(10))
+print(count_down(4))
