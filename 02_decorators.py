@@ -6,9 +6,9 @@ from time import sleep
 
 def timer(func):
 
-    def inner():
+    def inner(*ARGS, **KWARGS):
         start = datetime.now()
-        result = func()
+        result = func(*ARGS, **KWARGS)
         print(result)
         end = datetime.now()
         elapsed = end - start
@@ -19,9 +19,9 @@ def timer(func):
 
 
 @timer
-def say_hi():
+def say_hi(name="you"):
     sleep(.2)
-    return "Hello there!"
+    return f"Hello there {name}!"
 
 @timer
 def say_bye():
@@ -30,15 +30,15 @@ def say_bye():
 
 # call_hello = timer(say_hi)
 # print(call_hello())
-# print(say_hi())
+# print(say_hi("Brad"))
 # print(say_bye())
 
 @timer
-def do_stuff():
+def do_stuff(num):
     count = 0
-    for val in range(100_000_000):
+    for val in range(num):
         count += 1
 
     return count
 
-print(do_stuff())
+print(do_stuff(100_000_000))
