@@ -4,11 +4,11 @@
 - Decorators
 - Class Syntax
     - Constructors
-    - Attributes
     - Methods
         - "Self" Methods
         - Class Methods
         - Static Methods
+    - Attributes
     - Getters & Setters
     - Inheritance
         - Polymorphism
