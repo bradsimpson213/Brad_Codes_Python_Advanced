@@ -14,6 +14,7 @@
         - Polymorphism
     - Magic Methods
     
+- Recursion
 - Iterators
 - Generators
 - and more!
