@@ -3,6 +3,8 @@ from random import choice
 
 
 class Cat:
+    breed = "American Short Hair"
+
     def __init__(self, color, age, name="Kitty"):
         self.color = color
         self.age = age
@@ -44,5 +46,16 @@ blue, patch, fifi = many_cats
 # print(blue.speak())
 # print(patch.speak())
 # print(blue.play_with_toy())
-print(Cat.human_to_cat_years(5))
-print(blue.human_to_cat_years(blue.age))
+# print(Cat.human_to_cat_years(5))
+# print(blue.human_to_cat_years(blue.age))
+print(Cat.breed)
+print(blue.breed)
+print(patch.breed)
+Cat.breed = "American Long Hair"
+print(Cat.breed)
+print(blue.breed)
+print(patch.breed)
+blue.breed = "Feisty Ninja Cat"
+print(Cat.breed)
+print(blue.breed)
+print(patch.breed)
