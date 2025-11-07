@@ -9,11 +9,10 @@
         - Class Methods
         - Static Methods
     - Attributes
+    - Magic Methods
     - Getters & Setters
     - Inheritance
         - Polymorphism
-    - Magic Methods
-    
 - Recursion
 - Iterators
 - Generators
