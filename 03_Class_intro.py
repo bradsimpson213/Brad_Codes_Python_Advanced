@@ -36,9 +36,25 @@ class Cat:
             return 25 + (human_age - 2) * 4
         
 
+    def __repr__(self):
+        return f"< Cat class name: {self.name} is a {self.color} cat>"
+    
+
+    def __str__(self):
+        return f"< Cat class name: {self.name} is a {self.color} cat>"
+    
+
+    def __len__(self):
+        return self.age
+        
+
 
 many_cats = Cat.cat_factory([("black", 9, "Blue"), ("tuxedo", 9, "Patch"),("gray", 15, "Fifi")])
 blue, patch, fifi = many_cats
+print(blue)
+print(len(blue))
+
+
 # blue = Cat("black", 9, "Blue")
 # patch = Cat("tuxedo", 9, "Patch")
 # print(blue.name)
@@ -48,14 +64,14 @@ blue, patch, fifi = many_cats
 # print(blue.play_with_toy())
 # print(Cat.human_to_cat_years(5))
 # print(blue.human_to_cat_years(blue.age))
-print(Cat.breed)
-print(blue.breed)
-print(patch.breed)
-Cat.breed = "American Long Hair"
-print(Cat.breed)
-print(blue.breed)
-print(patch.breed)
-blue.breed = "Feisty Ninja Cat"
-print(Cat.breed)
-print(blue.breed)
-print(patch.breed)
+# print(Cat.breed)
+# print(blue.breed)
+# print(patch.breed)
+# Cat.breed = "American Long Hair"
+# print(Cat.breed)
+# print(blue.breed)
+# print(patch.breed)
+# blue.breed = "Feisty Ninja Cat"
+# print(Cat.breed)
+# print(blue.breed)
+# print(patch.breed)
