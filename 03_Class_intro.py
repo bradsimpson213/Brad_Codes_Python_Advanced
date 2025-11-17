@@ -6,10 +6,36 @@ class Cat:
     breed = "American Short Hair"
 
     def __init__(self, color, age, name="Kitty"):
-        self.color = color
-        self.age = age
-        self.name = name
-        self.toys = ["ball", "toy mouse", "yarn"]
+        self._color = color
+        self._age = age
+        self._name = name
+        self._toys = ["ball", "toy mouse", "yarn"]
+
+
+    @property
+    def name(self):
+        return self._name
+    
+
+    @name.setter
+    def name(self, new_name):
+        if len(new_name) > 15:
+            print("Thats too long a name for a cat!")
+        else:
+            self._name = new_name
+
+    @property
+    def age(self):
+        return  self._age
+    
+    @age.setter
+    def age(self, new_age):
+        if new_age > 38:
+            print("Thats too old of an age for a cat!")
+        elif new_age < 0:
+            print("Cats can't have a negative age!")
+        else:
+            self._age = new_age
 
 
     def speak(self):
@@ -37,22 +63,36 @@ class Cat:
         
 
     def __repr__(self):
-        return f"< Cat class name: {self.name} is a {self.color} cat>"
+        return f"< Cat class name: {self.name} is a {self._color} cat>"
     
 
     def __str__(self):
-        return f"< Cat class name: {self.name} is a {self.color} cat>"
+        return f"< Cat class name: {self.name} is a {self._color} cat>"
     
 
     def __len__(self):
-        return self.age
+        return self._age
         
 
 
 many_cats = Cat.cat_factory([("black", 9, "Blue"), ("tuxedo", 9, "Patch"),("gray", 15, "Fifi")])
 blue, patch, fifi = many_cats
 print(blue)
-print(len(blue))
+# print(len(blue))
+# print(blue.name)
+# blue.name = "notblueberrythesillykitty"
+# print(blue.name)
+print(blue.age)
+blue.age = 43
+blue.age= -1
+blue.age = 10
+print(blue.age)
+
+
+
+
+
+
 
 
 # blue = Cat("black", 9, "Blue")
