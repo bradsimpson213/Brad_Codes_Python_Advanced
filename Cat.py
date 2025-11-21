@@ -16,13 +16,13 @@ class Cat:
     def name(self):
         return self._name
     
-
     @name.setter
     def name(self, new_name):
         if len(new_name) > 15:
             print("Thats too long a name for a cat!")
         else:
             self._name = new_name
+
 
     @property
     def age(self):
