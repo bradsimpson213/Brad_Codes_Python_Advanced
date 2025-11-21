@@ -75,18 +75,18 @@ class Cat:
         
 
 
-many_cats = Cat.cat_factory([("black", 9, "Blue"), ("tuxedo", 9, "Patch"),("gray", 15, "Fifi")])
-blue, patch, fifi = many_cats
-print(blue)
+# many_cats = Cat.cat_factory([("black", 9, "Blue"), ("tuxedo", 9, "Patch"),("gray", 15, "Fifi")])
+# blue, patch, fifi = many_cats
+# print(blue)
 # print(len(blue))
 # print(blue.name)
 # blue.name = "notblueberrythesillykitty"
 # print(blue.name)
-print(blue.age)
-blue.age = 43
-blue.age= -1
-blue.age = 10
-print(blue.age)
+# print(blue.age)
+# blue.age = 43
+# blue.age= -1
+# blue.age = 10
+# print(blue.age)
 
 
 
